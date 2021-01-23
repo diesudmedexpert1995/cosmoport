@@ -54,16 +54,16 @@ public class ShipSpecificationUtil {
         return (r, q, cb) -> {
             if (after == null && before == null) return null;
             if (after == null) {
-                Date before1 = new Date(before);
-                return cb.lessThanOrEqualTo(r.get("prodDate"), before1);
+                Date beforeDate = new Date(before);
+                return cb.lessThanOrEqualTo(r.get("prodDate"), beforeDate);
             }
             if (before == null) {
-                Date after1 = new Date(after);
-                return cb.greaterThanOrEqualTo(r.get("prodDate"), after1);
+                Date afterDate = new Date(after);
+                return cb.greaterThanOrEqualTo(r.get("prodDate"), afterDate);
             }
-            Date before1 = new Date(before);
+            Date beforeDate = new Date(before);
             Date after1 = new Date(after);
-            return cb.between(r.get("prodDate"), after1, before1);
+            return cb.between(r.get("prodDate"), after1, beforeDate);
         };
     }
 
