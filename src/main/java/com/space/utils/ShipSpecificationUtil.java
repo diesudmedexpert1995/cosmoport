@@ -61,9 +61,9 @@ public class ShipSpecificationUtil {
                 Date afterDate = new Date(after);
                 return cb.greaterThanOrEqualTo(r.get("prodDate"), afterDate);
             }
-            Date beforeDate = new Date(before);
+            Date before1 = new Date(before);
             Date after1 = new Date(after);
-            return cb.between(r.get("prodDate"), after1, beforeDate);
+            return cb.between(r.get("prodDate"), after1, before1);
         };
     }
 
